@@ -67,7 +67,7 @@
                 <span class="text-gray-700">Area Size (Sq m):</span>
                 <input type="number" id="area_size_1" name="area_size_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
             </label>
-
+s
             <label class="block col-span-2">
                 <span class="text-gray-700">Amount:</span>
                 <input type="number" id="amount_1" name="amount_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
