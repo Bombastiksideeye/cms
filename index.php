@@ -117,7 +117,7 @@
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
-                <div class="mt-10">
+                <form class="mt-10">
                     <div class="main w-96 p-2 flex items-center flex-col bg-white m-auto mb-5 border border-green-800">
                         <img style="width: 200px;" class="ml-5" src="images/logo.png">
                         <label class="input input-bordered flex items-center gap-2 p-2 mt-8 w-3/4 text-sm border-green-800">
@@ -134,7 +134,7 @@
                         </label>
                         <button type="submit" class="rounded-md bg-green-800 text-white w-3/4 p-3 mt-8 mb-8 text-sm"><a href="UI.php">Log in</a></button>
                     </div>
-                </div>
+      </form>
             </div>
         </dialog>
     </div>

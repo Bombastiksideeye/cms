@@ -302,7 +302,7 @@
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
 
-                <div class="overflow-x-auto no-scrollbar">
+                <div class="overflow-x-auto">
                     <div class="flex items-center space-x-4 p-10 w-max">
                         <a href="dfap.php">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
