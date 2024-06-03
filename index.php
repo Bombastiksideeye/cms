@@ -23,7 +23,7 @@
 <body class=" bg-green-200">
 <div class="navbar bg-base-100">
     <div class="flex-1">
-        <a class="btn btn-ghost text-xl">Compassion Memorial Gardens</a>
+        <a href="log in.php" class="btn btn-ghost text-xl">Compassion Memorial Gardens</a>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal pr-20 space-x-10 text-lg">

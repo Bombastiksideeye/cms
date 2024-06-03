@@ -7,46 +7,50 @@
   <title>Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/ecd5e25db3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="bg-green-800 h-72 w-full absolute"></div>
   <aside class="bg-gray-100 border-0 fixed w-64 h-full">
     <div class="p-3 relative">
-     <a class="flex items-center" href="https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html" target="_blank">
+     <a>
         <img src="images/logo1.png" class="h-50" alt="main_logo">
       </a>
-      <span class="ml-14 text-[20px] font-bold">Dashboard</span>
     </div>
     <hr class="border-gray-200 mt-0 ">
     <div class="w-auto mt-5">
       <ul class="list-none pt-10">
-        <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/deceased-profile.html">
-            <i class="ni ni-single-02 text-yellow-500 text-sm mr-2"></i>
-            <span class="ml-1">Deceased Profiles</span>
+      <li class="my-2">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Dashboard">
+       <span class="ml-3">Dashboard</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/user-profiles2.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Deceased Profiles">
+            <span class="ml-3">Deceased Profiles</span>
+          </a>
+        </li>
+        <li class="my-2">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#User Profiles">
             <i class="ni ni-circle-08 text-blue-500 text-sm mr-2"></i>
             <span class="ml-1">User Profiles</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/concerts.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Concerns">
             <i class="ni ni-headphones text-red-500 text-sm mr-2"></i>
             <span class="ml-1">Concerns</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/reservations.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Reservation Records">
             <i class="ni ni-calendar-grid-58 text-blue-500 text-sm mr-2"></i>
             <span class="ml-1">Reservations</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/payment.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Payment Records">
             <i class="ni ni-credit-card text-green-500 text-sm mr-2"></i>
             <span class="ml-1">Payments</span>
           </a>
@@ -56,7 +60,7 @@
   </aside>
   <main class="relative ml-64 p-6">
     <!-- Navbar -->
-    <nav class="bg-white rounded-xl shadow px-6 py-3">
+    <nav id="Dashboard" class="bg-white rounded-xl shadow px-6 py-3">
       <div class="flex justify-between items-center">
         <nav>
           <ol class="flex text-sm text-gray-500">
@@ -78,6 +82,35 @@
         </div>
       </div>
     </nav>
+
+
+    <dialog id="logout_modal" class="modal">
+    <div class="modal-box w-11/12 max-w-sm bg-green-400 relative">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        </form>
+        <div class="flex flex-col items-center p-6 bg-white m-auto my-5 border border-green-800 rounded-lg">
+            <h2 class="text-xl font-bold mb-4">Log out of your account</h2>
+            <div class="flex gap-4 mt-4">
+            <a href="UI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
+             <a href="index.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<style>
+    .modal-box {
+        animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+
+
     <!-- End Navbar -->
     <div class="grid grid-cols-1 md:grid-cols-5 gap-4 pt-5">
   <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
@@ -112,11 +145,17 @@
   </div>
 </div>
 
-<div class="container mx-auto mt-10">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-2xl font-semibold">Deceased Profiles</h2>
-            <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
-        </div>
+<div id="Deceased Profiles" class="container mx-auto mt-10">
+<div class="flex justify-between mb-4 items-center">
+    <h2 class="text-2xl font-semibold">Deceased Profiles</h2>
+    <div class="flex space-x-5 items-center">
+        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
+        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+    </div>
+</div>
+
         <div class="bg-white shadow-md rounded">
             <table class="min-w-full bg-white">
                 <thead>
@@ -153,10 +192,15 @@
     </div>
 
 
-    <div class="container mx-auto mt-10">
+    <div id="User Profiles" class="container mx-auto mt-10">
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-semibold">User Profiles</h2>
-            <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+            <div class="flex space-x-5 items-center">
+        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
+        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+    </div>
         </div>
         <div class="bg-white shadow-md rounded">
             <table class="min-w-full bg-white">
@@ -195,10 +239,15 @@
         </div>
     </div>
 
-    <div class="container mx-auto mt-10">
+    <div id="Concerns" class="container mx-auto mt-10">
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-semibold">Concerns</h2>
-            <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+            <div class="flex space-x-5 items-center">
+        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
+        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+    </div>
         </div>
         <div class="bg-white shadow-md rounded">
             <table class="min-w-full bg-white">
@@ -226,10 +275,15 @@
     </div>
 
 
-    <div class="container mx-auto mt-10">
+    <div id="Reservation Records" class="container mx-auto mt-10">
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-semibold">Reservation Records</h2>
-            <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+            <div class="flex space-x-5 items-center">
+        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
+        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+    </div>
         </div>
         <div class="bg-white shadow-md rounded">
             <table class="min-w-full bg-white">
@@ -257,10 +311,15 @@
     </div>
 
 
-    <div class="container mx-auto mt-10">
+    <div id="Payment Records" class="container mx-auto mt-10">
     <div class="flex justify-between items-center mb-4">
         <h2 class="text-2xl font-semibold">Payment Records</h2>
+        <div class="flex space-x-5 items-center">
+        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
+        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
         <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+    </div>
     </div>
     <div class="bg-white shadow-md rounded">
         <table class="min-w-full bg-white">
