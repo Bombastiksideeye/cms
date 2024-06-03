@@ -9,47 +9,46 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100">
+<body>
   <div class="bg-green-800 h-72 w-full absolute"></div>
-  <aside class="bg-white border-0 fixed w-64 h-full">
+  <aside class="bg-gray-100 border-0 fixed w-64 h-full">
     <div class="p-3 relative">
-      <i class="fas fa-times cursor-pointer text-gray-400 absolute right-0 top-0 xl:hidden" aria-hidden="true" id="iconSidenav"></i>
-      <a class="flex items-center" href="https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html" target="_blank">
-        <img src="./assets/img/logo-ct-dark.png" class="h-10" alt="main_logo">
-        <span class="ml-2 font-bold">Dashboard</span>
+     <a class="flex items-center" href="https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html" target="_blank">
+        <img src="images/logo1.png" class="h-50" alt="main_logo">
       </a>
+      <span class="ml-14 text-[20px] font-bold">Dashboard</span>
     </div>
-    <hr class="border-gray-200 mt-0">
-    <div class="w-auto">
-      <ul class="list-none p-0">
+    <hr class="border-gray-200 mt-0 ">
+    <div class="w-auto mt-5">
+      <ul class="list-none pt-10">
         <li class="my-2">
-          <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/deceased-profile.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/deceased-profile.html">
             <i class="ni ni-single-02 text-yellow-500 text-sm mr-2"></i>
             <span class="ml-1">Deceased Profiles</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/user-profiles2.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/user-profiles2.html">
             <i class="ni ni-circle-08 text-blue-500 text-sm mr-2"></i>
             <span class="ml-1">User Profiles</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/concerts.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/concerts.html">
             <i class="ni ni-headphones text-red-500 text-sm mr-2"></i>
             <span class="ml-1">Concerns</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/reservations.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/reservations.html">
             <i class="ni ni-calendar-grid-58 text-blue-500 text-sm mr-2"></i>
             <span class="ml-1">Reservations</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/payment.html">
+          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="./pages/payment.html">
             <i class="ni ni-credit-card text-green-500 text-sm mr-2"></i>
-            <span class="ml-1">Payment</span>
+            <span class="ml-1">Payments</span>
           </a>
         </li>
       </ul>
@@ -80,30 +79,224 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="py-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        <div class="bg-white rounded-xl shadow p-4">
-          <h2 class="font-bold text-xl mb-2">Deceased Profiles</h2>
-          <p class="text-gray-600">Explore profiles of deceased individuals.</p>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 pt-5">
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+    <i class="fas fa-user-slash text-3xl mb-2"></i>
+    <div class="text-3xl font-bold text-blue-500">2194</div>
+    <h2 class="font-bold text-xl mb-2">Deceased Profiles</h2>
+    <p class="text-gray-400">Explore profiles of deceased individuals.</p>
+  </div>
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+    <i class="fas fa-users text-3xl mb-2"></i>
+    <div class="text-3xl font-bold text-blue-500">223</div>
+    <h2 class="font-bold text-xl mb-2">User Profiles</h2>
+    <p class="text-gray-400">View and manage user profiles.</p>
+  </div>
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+    <i class="fas fa-exclamation-circle text-3xl mb-2"></i>
+    <div class="text-3xl font-bold text-blue-500">234</div>
+    <h2 class="font-bold text-xl mb-2">Concerns</h2>
+    <p class="text-gray-400">Handle concerns and issues.</p>
+  </div>
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+    <i class="fas fa-calendar-alt text-3xl mb-2"></i>
+    <div class="text-3xl font-bold text-blue-500">194</div>
+    <h2 class="font-bold text-xl mb-2">Reservations</h2>
+    <p class="text-gray-400">Manage reservations for events or services.</p>
+  </div>
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+    <i class="fas fa-dollar-sign text-3xl mb-2"></i>
+    <div class="text-3xl font-bold text-blue-500">234</div>
+    <h2 class="font-bold text-xl mb-2">Payments</h2>
+    <p class="text-gray-400">Track and process payments.</p>
+  </div>
+</div>
+
+<div class="container mx-auto mt-10">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold">Deceased Profiles</h2>
+            <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
         </div>
-        <div class="bg-white rounded-xl shadow p-4">
-          <h2 class="font-bold text-xl mb-2">User Profiles</h2>
-          <p class="text-gray-600">View and manage user profiles.</p>
+        <div class="bg-white shadow-md rounded">
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">LAST NAME</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">FIRST NAME</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">MIDDLE NAME</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">DATE OF BIRTH</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">DATE OF DEATH</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">PLACE OF BIRTH</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">PLACE OF DEATH</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">CAUSE OF DEATH</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">BURIAL DATE</th>
+                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">BURIAL PLACE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-100">
+                        <td class="border-t py-2 px-4">[Last Name]</td>
+                        <td class="border-t py-2 px-4">[First Name]</td>
+                        <td class="border-t py-2 px-4">[Middle Name]</td>
+                        <td class="border-t py-2 px-4">[Date of Birth]</td>
+                        <td class="border-t py-2 px-4">[Date of Death]</td>
+                        <td class="border-t py-2 px-4">[Place of Birth]</td>
+                        <td class="border-t py-2 px-4">[Place of Death]</td>
+                        <td class="border-t py-2 px-4">[Cause of Death]</td>
+                        <td class="border-t py-2 px-4">[Burial Date]</td>
+                        <td class="border-t py-2 px-4">[Burial Place]</td>
+                    </tr>
+                    <!-- More rows as needed -->
+                </tbody>
+            </table>
         </div>
-        <div class="bg-white rounded-xl shadow p-4">
-          <h2 class="font-bold text-xl mb-2">Concerns</h2>
-          <p class="text-gray-600">Handle concerns and issues.</p>
-        </div>
-        <div class="bg-white rounded-xl shadow p-4">
-          <h2 class="font-bold text-xl mb-2">Reservations</h2>
-          <p class="text-gray-600">Manage reservations for events or services.</p>
-        </div>
-        <div class="bg-white rounded-xl shadow p-4">
-          <h2 class="font-bold text-xl mb-2">Payment</h2>
-          <p class="text-gray-600">Track and process payments.</p>
-        </div>
-      </div>
     </div>
+
+
+    <div class="container mx-auto mt-10">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold">User Profiles</h2>
+            <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+        </div>
+        <div class="bg-white shadow-md rounded">
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Email</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Username</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Password</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">First Name</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Middle Name</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Last Name</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Address</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Gender</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Status</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Birth Date</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-100">
+                        <td class="border-t py-2 px-4">[Email]</td>
+                        <td class="border-t py-2 px-4">[Username]</td>
+                        <td class="border-t py-2 px-4">[Password]</td>
+                        <td class="border-t py-2 px-4">[First Name]</td>
+                        <td class="border-t py-2 px-4">[Middle Name]</td>
+                        <td class="border-t py-2 px-4">[Last Name]</td>
+                        <td class="border-t py-2 px-4">[Address]</td>
+                        <td class="border-t py-2 px-4">[Gender]</td>
+                        <td class="border-t py-2 px-4">[Status]</td>
+                        <td class="border-t py-2 px-4">[Birth Date]</td>
+                        <td class="border-t py-2 px-4">[Age]</td>
+                    </tr>
+                    <!-- More rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-10">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold">Concerns</h2>
+            <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+        </div>
+        <div class="bg-white shadow-md rounded">
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Name</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Email</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Phone</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Message</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Date Received</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-100">
+                        <td class="border-t py-2 px-4">[Name]</td>
+                        <td class="border-t py-2 px-4">[Email]</td>
+                        <td class="border-t py-2 px-4">[Phone]</td>
+                        <td class="border-t py-2 px-4">[Message]</td>
+                        <td class="border-t py-2 px-4">[Date Received]</td>
+                    </tr>
+                    <!-- More rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="container mx-auto mt-10">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold">Reservation Records</h2>
+            <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+        </div>
+        <div class="bg-white shadow-md rounded">
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Username</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Name of Deceased</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Lot Type</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Amount</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Reservation Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-100">
+                        <td class="border-t py-2 px-4">[Username]</td>
+                        <td class="border-t py-2 px-4">[Name of Deceased]</td>
+                        <td class="border-t py-2 px-4">[Lot Type]</td>
+                        <td class="border-t py-2 px-4">[Amount]</td>
+                        <td class="border-t py-2 px-4">[Reservation Date]</td>
+                    </tr>
+                    <!-- More rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="container mx-auto mt-10">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-semibold">Payment Records</h2>
+        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+    </div>
+    <div class="bg-white shadow-md rounded">
+        <table class="min-w-full bg-white">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Username</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Name of Deceased</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Lot Type</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Amount</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Reservation Date</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Area Size (Sq m)</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Down Payment</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Monthly Amortization (0% Interest)</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Date Paid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover:bg-gray-100">
+                    <td class="border-t py-2 px-4">[Username]</td>
+                    <td class="border-t py-2 px-4">[Name of Deceased]</td>
+                    <td class="border-t py-2 px-4">[Lot Type]</td>
+                    <td class="border-t py-2 px-4">[Amount]</td>
+                    <td class="border-t py-2 px-4">[Reservation Date]</td>
+                    <td class="border-t py-2 px-4">[Area Size]</td>
+                    <td class="border-t py-2 px-4">[Down Payment]</td>
+                    <td class="border-t py-2 px-4">[Monthly Amortization]</td>
+                    <td class="border-t py-2 px-4">[Date Paid]</td>
+                </tr>
+                <!-- More rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
   </main>
 </body>
 </html>
+

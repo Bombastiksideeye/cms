@@ -21,23 +21,29 @@
 
 </head>
 <body class=" bg-green-200">
-<div class=" navbar bg-base-100 bg-transparent  fixed z-50">
-  <div class="navbar-start">
-    <a href="game.php">
-  <img src="images/logo.png" alt="Logo" class="w-24 mb-4">
-</a>
-  </div>
+<div class="navbar bg-base-100">
+    <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Compassion Memorial Gardens</a>
+    </div>
+    <div class="flex-none">
+        <ul class="menu menu-horizontal pr-20 space-x-10 text-lg">
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#pricelist">Pricelist</a></li>
+            <li><a href="#question">FAQ</a></li>
+        </ul>
+    </div>
 </div>
+
   
 
 
-<div class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="bg-gray-100 flex items-center justify-center h-screen mt-20">
     <div class="relative">
-        <img src="images/pic1.jpg" alt="Picture" class="w-full h-auto">
-        <h1 class="absolute inset-0 flex items-center justify-center text-5xl font-bold text-center text-green-600">Your Reservation, Our Priority</h1>
+    <img src="images/pic1.jpg" alt="Picture" class="w-full h-auto filter brightness-[.3]">
+    <h1 class="absolute inset-0 flex items-center justify-left text-5xl font-bold text-center ml-20 mb-60 text-white">Your Reservation,<br> Our Priority</h1>
 
-        <!-- You can open the modal using ID.showModal() method -->
-        <button onclick="document.getElementById('register_modal').showModal()" class="btn wave-effect mb-60 absolute inset-0 flex items-center justify-center w-60 h-20 m-auto bg-green-700 text-white rounded-lg hover:bg-green-800">Reserve Now</button>
+<!-- You can open the modal using ID.showModal() method -->
+<button onclick="document.getElementById('register_modal').showModal()" style="margin-left: 190px;" class="btn wave-effect mt-100 absolute inset-0   w-40 h-15 m-auto bg-green-700 text-white rounded-2xl hover:bg-green-800">Reserve Now</button>
 
         <dialog id="register_modal" class="modal">
             <div class="modal-box w-11/12 max-w-xl bg-green-400">
@@ -154,7 +160,7 @@
 
 
 
-<div class=" flex items-center justify-center h-screen w-1/2 m-auto pt-20">
+<div id="contact" class=" flex items-center justify-center h-screen w-1/2 m-auto pt-20">
     <div class="container mx-auto p-4">
         <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
             <div class="w-full md:w-1/2 h-97">
@@ -175,7 +181,7 @@
 
 
 
-                <div class="max-w-6xl mx-auto mt-10 pb-40">
+                <div id="pricelist" class="max-w-6xl mx-auto mt-10 pb-40">
     <h2 class="text-2xl font-bold text-center mb-5 text-green-800">PRICELIST</h2>
     <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden ">
         <thead class="bg-green-700 text-white ">
@@ -265,8 +271,8 @@
 
 
 
-                <div class="max-w-5xl mx-auto pt-40">
-  <div class="collapse-container pb-40">
+                <div id="question" class="max-w-5xl mx-auto pt-40">
+  <div  class="collapse-container pb-40">
 
   <div class="collapse collapse-plus bg-base-200 my-2 rounded-lg shadow-md  ">
       <input type="radio" name="my-accordion-3" id="accordion-1" /> 
