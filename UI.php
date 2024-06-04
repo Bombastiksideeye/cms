@@ -24,7 +24,7 @@
 
 </head>
 <body class=" bg-green-200">
-<div class=" navbar bg-base-100 fixed z-50">
+<div class=" navbar bg-base-100 fixed z-50" style="border-bottom: solid 20px #a7f3d0;">
  
 
 
@@ -287,13 +287,13 @@
 
 
 
-<div class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="bg-gray-100 flex items-center justify-center h-screen ">
     <div class="relative">
     <img src="images/pic1.jpg" alt="Picture" class="w-full h-auto filter brightness-[.3]">
-<h1 class="absolute inset-0 flex items-center justify-left text-5xl font-bold text-center ml-20 mt-40 text-white">Your Reservation,<br> Our Priority</h1>
+<h1 class="absolute inset-0 flex items-center justify-left text-5xl font-bold text-center ml-20 mt-20 text-white">Your Reservation,<br> Our Priority</h1>
 
         <!-- You can open the modal using ID.showModal() method -->
-        <button onclick="document.getElementById('register_modal').showModal()" style="margin-left: 190px;" class="btn wave-effect mb-40 absolute inset-0   w-40 h-15 m-auto bg-green-700 text-white rounded-2xl hover:bg-green-800">Reserve Now</button>
+        <button onclick="document.getElementById('register_modal').showModal()" style="margin-left: 190px; margin-top: 550px;" class="btn wave-effect mb-40 absolute inset-0   w-40 h-15 m-auto bg-green-700 text-white rounded-2xl hover:bg-green-800">Reserve Now</button>
 
         <dialog id="register_modal" class="modal">
             <div class="modal-box w-11/12 max-w-6xl bg-green-400">

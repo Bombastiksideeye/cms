@@ -113,31 +113,31 @@
 
     <!-- End Navbar -->
     <div class="grid grid-cols-1 md:grid-cols-5 gap-4 pt-5">
-  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
     <i class="fas fa-user-slash text-3xl mb-2"></i>
     <div class="text-3xl font-bold text-blue-500">2194</div>
     <h2 class="font-bold text-xl mb-2">Deceased Profiles</h2>
     <p class="text-gray-400">Explore profiles of deceased individuals.</p>
   </div>
-  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
     <i class="fas fa-users text-3xl mb-2"></i>
     <div class="text-3xl font-bold text-blue-500">223</div>
     <h2 class="font-bold text-xl mb-2">User Profiles</h2>
     <p class="text-gray-400">View and manage user profiles.</p>
   </div>
-  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
     <i class="fas fa-exclamation-circle text-3xl mb-2"></i>
     <div class="text-3xl font-bold text-blue-500">234</div>
     <h2 class="font-bold text-xl mb-2">Concerns</h2>
     <p class="text-gray-400">Handle concerns and issues.</p>
   </div>
-  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
     <i class="fas fa-calendar-alt text-3xl mb-2"></i>
     <div class="text-3xl font-bold text-blue-500">194</div>
     <h2 class="font-bold text-xl mb-2">Reservations</h2>
     <p class="text-gray-400">Manage reservations for events or services.</p>
   </div>
-  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform">
+  <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
     <i class="fas fa-dollar-sign text-3xl mb-2"></i>
     <div class="text-3xl font-bold text-blue-500">234</div>
     <h2 class="font-bold text-xl mb-2">Payments</h2>
