@@ -63,7 +63,7 @@
       <h2 class="text-xl font-bold mb-4">Add Payment Record</h2>
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <label for="username" class="block">Username</label>
+          <label for="username" class="block">Name</label>
           <input type="text" id="username" name="username" class="input input-bordered border-green-800 w-full">
         </div>
         <div>
