@@ -310,7 +310,7 @@
         <table class="min-w-full bg-white">
             <thead>
                 <tr>
-                    <th class="py-2 px-4 bg-gray-200 text-left">Username</th>
+                    <th class="py-2 px-4 bg-gray-200 text-left">Name</th>
                     <th class="py-2 px-4 bg-gray-200 text-left">Name of Deceased</th>
                     <th class="py-2 px-4 bg-gray-200 text-left">Lot Type</th>
                     <th class="py-2 px-4 bg-gray-200 text-left">Amount</th>
