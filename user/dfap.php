@@ -12,7 +12,7 @@
 <body>
 <div class="main w-96 p-10 rounded-md flex items-center flex-col bg-white m-auto my-5 border border-green-800">
 
-<img style="width: 200px;" class=" ml-5 justify-center" src="images/logo.png">
+<img style="width: 200px;" class=" ml-5 justify-center" src="../images/logo.png">
 
     <h3 class="text-center font-bold text-lg text-green-800 pt-5">Reservation Form</h3><br>
     <form>
@@ -86,7 +86,7 @@
         </div>
         <div class="flex justify-center gap-10 mt-10">
             <a href="UI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
-             <a href="#" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Reserve</a>
+             <a href="UI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Reserve</a>
             </div>
     </form>
 </div>

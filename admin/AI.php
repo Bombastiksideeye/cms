@@ -15,7 +15,7 @@
   <aside class="bg-gray-100 border-0 fixed w-64 h-full">
     <div class="p-3 relative">
      <a>
-        <img src="images/logo1.png" class="h-50" alt="main_logo">
+        <img src="../images/logo1.png" class="h-50" alt="main_logo">
       </a>
     </div>
     <hr class="border-gray-200 mt-0 ">
@@ -92,8 +92,8 @@
         <div class="flex flex-col items-center p-6 bg-white m-auto my-5 border border-green-800 rounded-lg">
             <h2 class="text-xl font-bold mb-4">Log out of your account</h2>
             <div class="flex gap-4 mt-4">
-            <a href="UI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
-             <a href="index.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
+            <a href="AI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
+             <a href="../index.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
             </div>
         </div>
     </div>
@@ -149,10 +149,7 @@
 <div class="flex justify-between mb-4 items-center">
     <h2 class="text-2xl font-semibold">Deceased Profiles</h2>
     <div class="flex space-x-5 items-center">
-        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
-        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+        <a href="deceased profile.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
     </div>
 </div>
 
@@ -196,10 +193,7 @@
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-semibold">User Profiles</h2>
             <div class="flex space-x-5 items-center">
-        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
-        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+       <a href="user profile.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
     </div>
         </div>
         <div class="bg-white shadow-md rounded">
@@ -243,10 +237,7 @@
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-semibold">Concerns</h2>
             <div class="flex space-x-5 items-center">
-        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
-        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+       <a href="concerns.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
     </div>
         </div>
         <div class="bg-white shadow-md rounded">
@@ -279,10 +270,7 @@
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-semibold">Reservation Records</h2>
             <div class="flex space-x-5 items-center">
-        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
-        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+        <a href="reservation.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
     </div>
         </div>
         <div class="bg-white shadow-md rounded">
@@ -315,10 +303,7 @@
     <div class="flex justify-between items-center mb-4">
         <h2 class="text-2xl font-semibold">Payment Records</h2>
         <div class="flex space-x-5 items-center">
-        <i class="fa-solid fa-pen-to-square" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-plus" style="color: #0f5d0e; font-size: 25px;"></i>
-        <i class="fa-solid fa-trash" style="color: #0f5d0e; font-size: 25px;"></i>
-        <a href="#" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+       <a href="payment.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
     </div>
     </div>
     <div class="bg-white shadow-md rounded">

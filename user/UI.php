@@ -265,7 +265,7 @@
             <h2 class="text-xl font-bold mb-4">Log out of your account</h2>
             <div class="flex gap-4 mt-4">
             <a href="UI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
-             <a href="index.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
+             <a href="../index.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
             </div>
         </div>
     </div>
@@ -289,7 +289,7 @@
 
 <div class="bg-gray-100 flex items-center justify-center h-screen ">
     <div class="relative">
-    <img src="images/pic1.jpg" alt="Picture" class="w-full h-auto filter brightness-[.3]">
+    <img src="../images/pic1.jpg" alt="Picture" class="w-full h-auto filter brightness-[.3]">
 <h1 class="absolute inset-0 flex items-center justify-left text-5xl font-bold text-center ml-20 mt-20 text-white">Your Reservation,<br> Our Priority</h1>
 
         <!-- You can open the modal using ID.showModal() method -->
@@ -307,7 +307,7 @@
                         <a href="dfap.php">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
-                                    <img src="images/p2.jpg" alt="Socialized Low Cost" class="w-full h-auto mb-4">
+                                    <img src="../images/p2.jpg" alt="Socialized Low Cost" class="w-full h-auto mb-4">
                                     <h3 class="text-xl font-bold text-green-700">
                                         <span class="text-gray-800">Socialized <br>(Low Cost)</span>
                                     </h3>
@@ -329,7 +329,7 @@
                         <a href="dfap.php">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
-                                    <img src="images/p3.jpg" alt="Socialized" class="w-full h-auto mb-4">
+                                    <img src="../images/p3.jpg" alt="Socialized" class="w-full h-auto mb-4">
                                     <h3 class="text-xl font-bold text-green-700">
                                         <span class="text-gray-800">Socialized</span>
                                     </h3>
@@ -351,7 +351,7 @@
                         <a href="dfap.php">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
-                                    <img src="images/p1.jpg" alt="Lawn Lot" class="w-full h-auto mb-4">
+                                    <img src="../images/p1.jpg" alt="Lawn Lot" class="w-full h-auto mb-4">
                                     <h3 class="text-xl font-bold text-green-700">
                                         <span class="text-gray-800">Lawn Lot</span>
                                     </h3>
@@ -373,7 +373,7 @@
                         <a href="dfap.php">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
-                                    <img src="images/p1.jpg" alt="Upgraded" class="w-full h-auto mb-4">
+                                    <img src="../images/p1.jpg" alt="Upgraded" class="w-full h-auto mb-4">
                                     <h3 class="text-xl font-bold text-green-700">
                                         <span class="text-gray-800">Lawn Lot</span>
                                     </h3>
@@ -395,7 +395,7 @@
                         <a href="dfap.php">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
-                                    <img src="images/p1.jpg" alt="4-Lot Garden" class="w-full h-auto mb-4">
+                                    <img src="../images/p1.jpg" alt="4-Lot Garden" class="w-full h-auto mb-4">
                                     <h3 class="text-xl font-bold text-green-700">
                                         <span class="text-gray-800">4-Lot Garden</span>
                                     </h3>

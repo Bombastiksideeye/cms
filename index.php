@@ -23,7 +23,7 @@
 <body class=" bg-green-200">
 <div class="navbar bg-base-100">
     <div class="flex-1">
-        <a href="log in.php" class="btn btn-ghost text-xl">Compassion Memorial Gardens</a>
+        <a href="admin/log in.php" class="btn btn-ghost text-xl">Compassion Memorial Gardens</a>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal pr-20 space-x-10 text-lg">
@@ -138,7 +138,7 @@
                             </svg>
                             <input type="password" class="grow" placeholder="Password" />
                         </label>
-                        <button type="submit" class="rounded-md bg-green-800 text-white w-3/4 p-3 mt-8 mb-8 text-sm"><a href="UI.php">Log in</a></button>
+                        <button type="submit" class="rounded-md bg-green-800 text-white w-3/4 p-3 mt-8 mb-8 text-sm"><a href="user/UI.php">Log in</a></button>
                     </div>
       </form>
             </div>
