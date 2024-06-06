@@ -17,13 +17,14 @@
             -ms-overflow-style: none; 
             scrollbar-width: none; 
         }
+        
     </style>
 
 </head>
 <body class=" bg-green-200">
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-100 fixed top-0 z-10 shadow-md" style="border-bottom: 20px solid #bbf7d0;">
     <div class="flex-1">
-        <a href="admin/log in.php" class="btn btn-ghost text-xl">Compassion Memorial Gardens</a>
+        <a href="admin/log in.php" class="btn btn-ghost text-2xl">Compassion Memorial Gardens</a>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal pr-20 space-x-10 text-lg">
@@ -37,13 +38,13 @@
   
 
 
-<div class="bg-gray-100 flex items-center justify-center h-screen mt-20">
+<div class=" flex items-center justify-center h-screen">
     <div class="relative">
-    <img src="images/pic1.jpg" alt="Picture" class="w-full h-auto filter brightness-[.3]">
-    <h1 class="absolute inset-0 flex items-center justify-left text-5xl font-bold text-center ml-20 mb-60 text-white">Your Reservation,<br> Our Priority</h1>
+    <img src="images/pic1.jpg" alt="Picture" class=" filter brightness-[.3] w-full h-auto">
+    <h1 class="absolute inset-0 flex items-center justify-left text-5xl font-bold text-center ml-20 text-white" style="margin-top: -50px;">Your Reservation,<br> Our Priority</h1>
 
 <!-- You can open the modal using ID.showModal() method -->
-<button onclick="document.getElementById('register_modal').showModal()" style="margin-left: 190px;" class="btn wave-effect mt-100 absolute inset-0   w-40 h-15 m-auto bg-green-700 text-white rounded-2xl hover:bg-green-800">Reserve Now</button>
+<button onclick="document.getElementById('register_modal').showModal()" style="margin-left: 190px; margin-top: 470px;" class="btn wave-effect absolute inset-0   w-40 h-15 m-auto bg-green-700 text-white rounded-2xl hover:bg-green-800">Reserve Now</button>
 
         <dialog id="register_modal" class="modal">
             <div class="modal-box w-11/12 max-w-xl bg-green-400">
@@ -138,7 +139,7 @@
                             </svg>
                             <input type="password" class="grow" placeholder="Password" />
                         </label>
-                        <button type="submit" class="rounded-md bg-green-800 text-white w-3/4 p-3 mt-8 mb-8 text-sm"><a href="user/UI.php">Log in</a></button>
+                        <a href="user/UI.php" class="block w-3/4 mx-auto rounded-md bg-green-800 text-white text-center p-3 mt-8 mb-8 text-sm">Log in</a>
                     </div>
       </form>
             </div>
@@ -160,7 +161,7 @@
 
 
 
-<div id="contact" class=" flex items-center justify-center h-screen w-1/2 m-auto pt-20">
+<div id="contact" class=" flex items-center justify-center h-screen w-1/2 m-auto pt-40">
     <div class="container mx-auto p-4">
         <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
             <div class="w-full md:w-1/2 h-97">

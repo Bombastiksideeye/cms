@@ -42,22 +42,28 @@
       </thead>
       <tbody id="profileTableBody">
         <tr class="hover:bg-gray-100">
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
+          <?php include '../database.php';
+          $db = new DatabaseConnection();
+          $users = $db->view("reservations");
+          foreach($users as $u){        
+          ?>
+          <td class="border-t py-2 px-4"><?php echo $u['last_name']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['first_name']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['middle_name']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['birth_date']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['death_date']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['birth_place']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['death_place']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['cause_of_death']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['burial_date']?></td>
+          <td class="border-t py-2 px-4"><?php echo $u['burial_place']?></td>
           <td class="border-t py-2 px-4">
             <i class="fa-solid fa-pen-to-square cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="editRow(this)"></i>
             <i class="fa-solid fa-trash cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="deleteRow(this)"></i>
             <i class="fa-solid fa-check cursor-pointer hidden" style="color: #0f5d0e; font-size: 25px;" onclick="confirmEdit(this)"></i>
           </td>
         </tr>
+        <?php } ?>
       </tbody>
     </table>
   </div>
@@ -66,7 +72,7 @@
 <!-- Add Modal -->
 <dialog id="addModal" class="modal">
   <div class="modal-box w-11/12 max-w-3xl">
-    <form id="addForm">
+    <form id="addForm" action="insert.php" method="POST">
       <h2 class="text-xl font-bold mb-4">Add Deceased Profile</h2>
       <div class="grid grid-cols-2 gap-4">
         <div>
@@ -118,48 +124,9 @@
   </div>
 </dialog>
 
-<script>
-document.getElementById('addForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const lastName = document.getElementById('lastName').value;
-  const firstName = document.getElementById('firstName').value;
-  const middleName = document.getElementById('middleName').value;
-  const dob = document.getElementById('dob').value;
-  const dod = document.getElementById('dod').value;
-  const pob = document.getElementById('pob').value;
-  const pod = document.getElementById('pod').value;
-  const cod = document.getElementById('cod').value;
-  const burialDate = document.getElementById('burialDate').value;
-  const burialPlace = document.getElementById('burialPlace').value;
-  
-  const tableBody = document.getElementById('profileTableBody');
-  const newRow = document.createElement('tr');
-  newRow.classList.add('hover:bg-gray-100');
-  
-  newRow.innerHTML = `
-    <td class="border-t py-2 px-4">${lastName}</td>
-    <td class="border-t py-2 px-4">${firstName}</td>
-    <td class="border-t py-2 px-4">${middleName}</td>
-    <td class="border-t py-2 px-4">${dob}</td>
-    <td class="border-t py-2 px-4">${dod}</td>
-    <td class="border-t py-2 px-4">${pob}</td>
-    <td class="border-t py-2 px-4">${pod}</td>
-    <td class="border-t py-2 px-4">${cod}</td>
-    <td class="border-t py-2 px-4">${burialDate}</td>
-    <td class="border-t py-2 px-4">${burialPlace}</td>
-    <td class="border-t py-2 px-4">
-      <i class="fa-solid fa-pen-to-square cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="editRow(this)"></i>
-      <i class="fa-solid fa-trash cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="deleteRow(this)"></i>
-      <i class="fa-solid fa-check cursor-pointer hidden" style="color: #0f5d0e; font-size: 25px;" onclick="confirmEdit(this)"></i>
-    </td>
-  `;
-  
-  tableBody.appendChild(newRow);
-  document.getElementById('addModal').close();
-});
 
-function editRow(icon) {
+<script>
+  function editRow(icon) {
   const row = icon.parentElement.parentElement;
   const cells = row.querySelectorAll('td');
   cells.forEach((cell, index) => {
@@ -180,12 +147,16 @@ function deleteRow(icon) {
 
 function confirmEdit(icon) {
   const row = icon.parentElement.parentElement;
-  const inputs = row.querySelectorAll('input');
+  const inputs = row.querySelectorAll('input, textarea');
   inputs.forEach((input, index) => {
     row.children[index].innerText = input.value;
   });
   icon.classList.add('hidden');
 }
 </script>
+
 </body>
 </html>
+
+
+

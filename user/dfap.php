@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/ecd5e25db3.js" crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
 </head>
 <body>
@@ -86,9 +87,96 @@
         </div>
         <div class="flex justify-center gap-10 mt-10">
             <a href="UI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
-             <a href="UI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Reserve</a>
+            <a href="#" id="pay-now-button" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Pay now</a>
             </div>
     </form>
 </div>
+
+
+
+
+<div id="payment-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+            <h2 class="text-2xl font-bold mb-6 text-center">Reservation Payment</h2>
+            <form id="payment-form" class="space-y-4">
+                <div class="form-row">
+                    <label for="card-element" class="block text-sm font-medium text-gray-700 mb-2">Credit or debit card</label>
+                    <div id="card-element" class="p-3 border border-gray-300 rounded-md"></div>
+                    <div id="card-errors" role="alert" class="text-red-500 mt-2 text-sm"></div>
+                </div>
+                <button id="submit-button" class="w-full bg-green-800 text-white p-3 rounded-md hover:bg-green-700">Pay</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Stripe configuration
+        var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+        var elements = stripe.elements();
+
+        var style = {
+            base: {
+                color: '#32325d',
+                fontFamily: 'Arial, sans-serif',
+                fontSmoothing: 'antialiased',
+                fontSize: '16px',
+                '::placeholder': {
+                    color: '#aab7c4'
+                }
+            },
+            invalid: {
+                color: '#fa755a',
+                iconColor: '#fa755a'
+            }
+        };
+
+        var card = elements.create('card', { style: style });
+        card.mount('#card-element');
+
+        card.on('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+
+        function stripeTokenHandler(token) {
+            console.log('Token ID:', token.id);
+            alert('Payment successful! Token: ' + token.id);
+            window.location.href = 'UI.php';
+        }
+
+        // Modal handling
+        var payNowButton = document.getElementById('pay-now-button');
+        var paymentModal = document.getElementById('payment-modal');
+
+        payNowButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            paymentModal.classList.remove('hidden');
+        });
+
+        // Close modal on clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target == paymentModal) {
+                paymentModal.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

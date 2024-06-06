@@ -3,7 +3,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,68 +47,44 @@
 
 
      <!-- Deceased Profile Modal -->
-     <div id="deceased-profile-modal" class="modal">
-        <div class="modal-box max-w-3xl bg-green-100">
-            <h3 class="font-bold text-lg text-green-800">Deceased Profile</h3>
-      
-        <table class="table w-full mt-4">
-    <thead>
-        <tr>
-            <th>Deceased Profile</th>
-            <th>Details</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Last Name</td>
-            <td>[Last Name]</td>
-        </tr>
-        <tr>
-            <td>First Name</td>
-            <td>[First Name]</td>
-        </tr>
-        <tr>
-            <td>Middle Name</td>
-            <td>[Middle Name]</td>
-        </tr>
-        <tr>
-            <td>Date of Birth</td>
-            <td>[Date of Birth]</td>
-        </tr>
-        <tr>
-            <td>Date of Death</td>
-            <td>[Date of Death]</td>
-        </tr>
-        <tr>
-            <td>Place of Birth</td>
-            <td>[Place of Birth]</td>
-        </tr>
-        <tr>
-            <td>Place of Death</td>
-            <td>[Place of Death]</td>
-        </tr>
-        <tr>
-            <td>Cause of Death</td>
-            <td>[Cause of Death]</td>
-        </tr>
-        <tr>
-            <td>Burial Date</td>
-            <td>[Burial Date]</td>
-        </tr>
-        <tr>
-            <td>Burial Place</td>
-            <td>[Burial Place]</td>
-        </tr>
-    </tbody>
-</table>
-     
-<div class="modal-action">
-                    <button type="button" class="btn" onclick="closeModal('deceased-profile-modal')">Close</button>
-                </div>
+<div id="deceased-profile-modal" class="modal">
+    <div class="modal-box max-w-7xl bg-green-100 p-4 rounded-lg shadow-lg">
+        <h3 class="font-bold text-lg text-green-800 mb-4">Deceased Profile</h3>
+
+        <table class="table w-full mb-4">
+            <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Date of Birth</th>
+                    <th>Date of Death</th>
+                    <th>Place of Birth</th>
+                    <th>Place of Death</th>
+                    <th>Cause of Death</th>
+                    <th>Burial Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[Last Name]</td>
+                    <td>[First Name]</td>
+                    <td>[Middle Name]</td>
+                    <td>[Date of Birth]</td>
+                    <td>[Date of Death]</td>
+                    <td>[Place of Birth]</td>
+                    <td>[Place of Death]</td>
+                    <td>[Cause of Death]</td>
+                    <td>[Burial Date]</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="modal-action flex justify-end mr-5">
+            <button type="button" class="btn btn-primary" onclick="closeModal('deceased-profile-modal')">Close</button>
+        </div>
     </div>
 </div>
-
-
 
     
 
@@ -420,6 +396,10 @@
         </dialog>
     </div>
 </div>
+
+
+
+
 
 <style>
     .no-scrollbar::-webkit-scrollbar {
