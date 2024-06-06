@@ -17,10 +17,7 @@
   <a href="AI.php">
         <img src="../images/logo1.png" class="h-20 ml-10" alt="main_logo">
       </a>
-    <h2 class="text-2xl font-semibold">Deceased Profiles</h2>
-    <div class="mr-20">
-      <i class="fa-solid fa-plus cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="document.getElementById('addModal').showModal()"></i>
-    </div>
+    <h2 class="text-2xl font-semibold mx-auto">Deceased Profiles</h2>
   </div>
 
   <div class="bg-white shadow-md rounded">
@@ -36,7 +33,6 @@
           <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">PLACE OF DEATH</th>
           <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">CAUSE OF DEATH</th>
           <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">BURIAL DATE</th>
-          <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">BURIAL PLACE</th>
           <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">ACTIONS</th>
         </tr>
       </thead>
@@ -56,7 +52,6 @@
           <td class="border-t py-2 px-4"><?php echo $u['death_place']?></td>
           <td class="border-t py-2 px-4"><?php echo $u['cause_of_death']?></td>
           <td class="border-t py-2 px-4"><?php echo $u['burial_date']?></td>
-          <td class="border-t py-2 px-4"><?php echo $u['burial_place']?></td>
           <td class="border-t py-2 px-4">
             <i class="fa-solid fa-pen-to-square cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="editRow(this)"></i>
             <i class="fa-solid fa-trash cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="deleteRow(this)"></i>
@@ -69,60 +64,6 @@
   </div>
 </div>
 
-<!-- Add Modal -->
-<dialog id="addModal" class="modal">
-  <div class="modal-box w-11/12 max-w-3xl">
-    <form id="addForm" action="insert.php" method="POST">
-      <h2 class="text-xl font-bold mb-4">Add Deceased Profile</h2>
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <label for="lastName" class="block">Last Name</label>
-          <input type="text" id="lastName" name="lastName" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="firstName" class="block">First Name</label>
-          <input type="text" id="firstName" name="firstName" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="middleName" class="block">Middle Name</label>
-          <input type="text" id="middleName" name="middleName" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="dob" class="block">Date of Birth</label>
-          <input type="date" id="dob" name="dob" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="dod" class="block">Date of Death</label>
-          <input type="date" id="dod" name="dod" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="pob" class="block">Place of Birth</label>
-          <input type="text" id="pob" name="pob" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="pod" class="block">Place of Death</label>
-          <input type="text" id="pod" name="pod" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="cod" class="block">Cause of Death</label>
-          <input type="text" id="cod" name="cod" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="burialDate" class="block">Burial Date</label>
-          <input type="date" id="burialDate" name="burialDate" class="input input-bordered border-green-800 w-full">
-        </div>
-        <div>
-          <label for="burialPlace" class="block">Burial Place</label>
-          <input type="text" id="burialPlace" name="burialPlace" class="input input-bordered border-green-800 w-full">
-        </div>
-      </div>
-      <div class="flex justify-end mt-4">
-        <button type="button" class="btn btn-error mr-2" onclick="document.getElementById('addModal').close()">Cancel</button>
-        <button type="submit" class="btn btn-success">Add</button>
-      </div>
-    </form>
-  </div>
-</dialog>
 
 
 <script>

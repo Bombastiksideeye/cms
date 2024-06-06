@@ -24,7 +24,7 @@
 <body class=" bg-green-200">
 <div class="navbar bg-base-100 fixed top-0 z-10 shadow-md" style="border-bottom: 20px solid #bbf7d0;">
     <div class="flex-1">
-        <a href="admin/log in.php" class="btn btn-ghost text-2xl">Compassion Memorial Gardens</a>
+        <a href="admin/log_in.php" class="btn btn-ghost text-2xl">Compassion Memorial Gardens</a>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal pr-20 space-x-10 text-lg">

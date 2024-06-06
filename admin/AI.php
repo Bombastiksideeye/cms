@@ -19,44 +19,46 @@
       </a>
     </div>
     <hr class="border-gray-200 mt-0 ">
-    <div class="w-auto mt-5">
+    <div class="w-auto">
       <ul class="list-none pt-10">
       <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Dashboard">
+          <a class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-200 rounded-md" href="#Dashboard">
        <span class="ml-3">Dashboard</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Deceased Profiles">
+          <a class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-200 rounded-md" href="#Deceased Profiles">
             <span class="ml-3">Deceased Profiles</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#User Profiles">
+          <a class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-200 rounded-md" href="#User Profiles">
             <i class="ni ni-circle-08 text-blue-500 text-sm mr-2"></i>
             <span class="ml-1">User Profiles</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Concerns">
+          <a class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-200 rounded-md" href="#Concerns">
             <i class="ni ni-headphones text-red-500 text-sm mr-2"></i>
             <span class="ml-1">Concerns</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Reservation Records">
+          <a class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-200 rounded-md" href="#Reservation Records">
             <i class="ni ni-calendar-grid-58 text-blue-500 text-sm mr-2"></i>
             <span class="ml-1">Reservations</span>
           </a>
         </li>
         <li class="my-2">
-          <a class="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-200 rounded-md" href="#Payment Records">
+          <a class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-200 rounded-md" href="#Payment Records">
             <i class="ni ni-credit-card text-green-500 text-sm mr-2"></i>
             <span class="ml-1">Payments</span>
           </a>
         </li>
       </ul>
     </div>
+    <button id="open-modal" class="rounded-md bg-green-800 text-white w-40 p-3 text-sm flex justify-center items-center ml-12 mt-10">Walk-In Lot Purchase</button>
+
   </aside>
   <main class="relative ml-64 p-6">
     <!-- Navbar -->
@@ -83,6 +85,127 @@
       </div>
     </nav>
 
+    
+
+
+    <div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden pt-96">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="main w-96 p-10 rounded-md flex items-center flex-col bg-white border border-green-800">
+      <img style="width: 200px;" class="ml-5 justify-center" src="../images/logo.png">
+      <h3 class="text-center font-bold text-lg text-green-800 pt-5">Purchase Form</h3>
+      <form class="mt-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <label class="block">
+                <span class="text-gray-700">Last Name</span>
+                <input type="text" name="lastname" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" placeholder="Last Name">
+            </label>
+            <label class="block">
+                <span class="text-gray-700">First Name</span>
+                <input type="text" name="firstname" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" placeholder="First Name">
+            </label>
+            <label class="block">
+                <span class="text-gray-700">Middle Name</span>
+                <input type="text" name="middlename" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" placeholder="Middle Name">
+            </label>
+            <label class="block col-span-2">
+                <span class="text-gray-700">Date of Birth</span>
+                <input type="date" name="birthdate" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
+            </label>
+            <label class="block col-span-2">
+                <span class="text-gray-700">Date of Death</span>
+                <input type="date" name="deathdate" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
+            </label>
+            <label class="block col-span-2">
+                <span class="text-gray-700">Place of Birth</span>
+                <input type="text" name="birthplace" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" placeholder="Place of Birth">
+            </label>
+            <label class="block col-span-2">
+                <span class="text-gray-700">Place of Death</span>
+                <input type="text" name="deathplace" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" placeholder="Place of Death">
+            </label>
+            <label class="block col-span-2">
+                <span class="text-gray-700">Cause of Death</span>
+                <input type="text" name="cause_of_death" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" placeholder="Cause of Death">
+            </label>
+            <label class="block col-span-2">
+                <span class="text-gray-700">Burial Date</span>
+                <input type="date" name="burial_date" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
+            </label>
+            
+
+            <label class="block col-span-2">
+                <span class="text-gray-700">Lot Type:</span>
+                <input type="text" name="lot_type_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" placeholder="Lot Type">
+            </label>
+
+            <label class="block col-span-2">
+                <span class="text-gray-700">Area Size (Sq m):</span>
+                <input type="number" id="area_size_1" name="area_size_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
+            </label>
+
+            <label class="block col-span-2">
+                <span class="text-gray-700">Amount:</span>
+                <input type="number" id="amount_1" name="amount_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
+            </label>
+
+            <label class="block col-span-2">
+                <span class="text-gray-700">Down Payment:</span>
+                <input type="number" id="down_payment_1" name="down_payment_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
+            </label>
+
+            <label class="block col-span-2">
+                <span class="text-gray-700">Monthly Amortization Interest:</span>
+                <input type="number" id="monthly_amortization_1" name="monthly_amortization_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
+            </label>
+        </div>
+        <div class="flex justify-center gap-10 mt-10">
+          <a href="AI.php" class="rounded-md bg-green-800 text-white  p-3 text-sm flex justify-center items-center">Cancel</a>
+          <a href="AI.php" id="pay-now-button" class="rounded-md bg-green-800 text-white  p-3 text-sm flex justify-center items-center">Confirm Purchase</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  // Get the modal and buttons
+  const modal = document.getElementById('modal');
+  const openModalBtn = document.getElementById('open-modal');
+  const closeModalBtn = document.getElementById('close-modal');
+
+  // Function to open the modal
+  function openModal() {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  // Function to close the modal
+  function closeModal() {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  }
+
+  // Event listener for opening the modal
+  openModalBtn.addEventListener('click', openModal);
+
+  // Event listener for closing the modal
+  closeModalBtn.addEventListener('click', closeModal);
+
+  // Close the modal if clicked outside of it
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Prevent the modal from closing if the form is clicked
+  document.querySelector('.main').addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+</script>
 
     <dialog id="logout_modal" class="modal">
     <div class="modal-box w-11/12 max-w-sm bg-green-400 relative">
@@ -149,7 +272,7 @@
 <div class="flex justify-between mb-4 items-center">
     <h2 class="text-2xl font-semibold">Deceased Profiles</h2>
     <div class="flex space-x-5 items-center">
-        <a href="deceased profile.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+        <a href="deceased_profile.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
     </div>
 </div>
 
@@ -166,7 +289,6 @@
                         <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">PLACE OF DEATH</th>
                         <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">CAUSE OF DEATH</th>
                         <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">BURIAL DATE</th>
-                        <th class="w-1/12 py-2 px-4 bg-gray-200 text-left">BURIAL PLACE</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -180,7 +302,6 @@
                         <td class="border-t py-2 px-4">[Place of Death]</td>
                         <td class="border-t py-2 px-4">[Cause of Death]</td>
                         <td class="border-t py-2 px-4">[Burial Date]</td>
-                        <td class="border-t py-2 px-4">[Burial Place]</td>
                     </tr>
                     <!-- More rows as needed -->
                 </tbody>
@@ -193,7 +314,7 @@
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-semibold">User Profiles</h2>
             <div class="flex space-x-5 items-center">
-       <a href="user profile.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
+       <a href="user_profile.php" class="bg-green-800 text-white py-2 px-4 rounded">SEE ALL</a>
     </div>
         </div>
         <div class="bg-white shadow-md rounded">
