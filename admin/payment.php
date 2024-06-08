@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,21 +35,28 @@
       </thead>
       <tbody id="paymentTableBody">
         <tr class="hover:bg-gray-100">
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
+        <?php 
+          include '../db.php';
+          $reservations = $db->selectWithWhere('reservations');
+          foreach($reservations as $p){
+            extract($p);
+          ?>
+          <td class="border-t py-2 px-4"><?php echo "$first_name $middle_name $last_name" ?> </td>
+          <td class="border-t py-2 px-4"><?php echo "$first_name $middle_name $last_name" ?></td>
+          <td class="border-t py-2 px-4"><?php echo $lot_type ?></td>
+          <td class="border-t py-2 px-4"><?php echo $amount ?></td>
+          <td class="border-t py-2 px-4"><?php echo $reservation_date ?></td>
+          <td class="border-t py-2 px-4"><?php echo $area_size ?></td>
+          <td class="border-t py-2 px-4"><?php echo $down_payment ?></td>
+          <td class="border-t py-2 px-4"><?php echo $monthly_amortization ?></td>
+          <td class="border-t py-2 px-4"><?php echo $reservation_date ?></td>
+          <td class="border-t py-2 px-4"><?php echo $lot_type ?></td>
           <td class="border-t py-2 px-4">
             <i class="fa-solid fa-trash cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="deleteRow(this)"></i>
             <i class="fa-solid fa-check cursor-pointer hidden" style="color: #0f5d0e; font-size: 25px;" onclick="confirmEdit(this)"></i>
           </td>
         </tr>
+        <?php } ?>
       </tbody>
     </table>
   </div>

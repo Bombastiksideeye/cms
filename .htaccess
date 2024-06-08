@@ -1,0 +1,11 @@
+# Enable the rewrite engine
+RewriteEngine On
+
+# Check if the request is for a file that doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Check if the request is for a directory that doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite the request to add .php extension
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

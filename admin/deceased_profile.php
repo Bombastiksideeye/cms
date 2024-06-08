@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="utf-8" />
@@ -38,9 +38,8 @@
       </thead>
       <tbody id="profileTableBody">
         <tr class="hover:bg-gray-100">
-          <?php include '../database.php';
-          $db = new DatabaseConnection();
-          $users = $db->view("reservations");
+          <?php include '../db.php';
+          $users = $db->selectWithWhere("reservations");
           foreach($users as $u){        
           ?>
           <td class="border-t py-2 px-4"><?php echo $u['last_name']?></td>

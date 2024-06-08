@@ -1,4 +1,6 @@
-<!-- form.html -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -34,10 +36,16 @@
         </ul>
     </div>
 </div>
-
-  
-
-
+<?php
+if(isset($_SESSION['success']))
+echo $_SESSION['success'];
+else
+session_destroy();
+if(isset($_SESSION['error']))
+echo $_SESSION['error'];
+else
+session_destroy();
+?>
 <div class=" flex items-center justify-center h-screen">
     <div class="relative">
     <img src="images/pic1.jpg" alt="Picture" class=" filter brightness-[.3] w-full h-auto">
@@ -57,7 +65,7 @@
                     <h2 class="text-xl font-bold mb-4">REGISTER NOW</h2>
                     <h4 class="text-sm text-gray-700 mb-4">Welcome to Compassion Memorial Gardens!</h4>
 
-                    <form action="users.php" method="POST" class="w-full">
+                    <form action="insert.php" method="POST" class="w-full">
                     <label class="input input-bordered flex items-center gap-2 p-2 mt-2 w-full text-sm border-green-800">
                         <input type="email" name="email" class="grow" placeholder="Email Address" required />
                     </label>
@@ -124,22 +132,22 @@
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
-                <form class="mt-10">
+                <form class="mt-10" action="insert.php" method="POST">
                     <div class="main w-96 p-2 flex items-center flex-col bg-white m-auto mb-5 border border-green-800">
                         <img style="width: 200px;" class="ml-5" src="images/logo.png">
                         <label class="input input-bordered flex items-center gap-2 p-2 mt-8 w-3/4 text-sm border-green-800">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                             </svg>
-                            <input type="text" class="grow" placeholder="Username" />
+                            <input name="username_auth" type="text" class="grow" placeholder="Username" required />
                         </label>
                         <label class="input input-bordered flex items-center gap-2 p-2 mt-8 w-3/4 text-sm border-green-800">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
                                 <path fill-rule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clip-rule="evenodd" />
                             </svg>
-                            <input type="password" class="grow" placeholder="Password" />
+                            <input type="password" name="password_auth" class="grow" placeholder="Password" required />
                         </label>
-                        <a href="user/UI.php" class="block w-3/4 mx-auto rounded-md bg-green-800 text-white text-center p-3 mt-8 mb-8 text-sm">Log in</a>
+                        <button type="submit" class="block w-3/4 mx-auto rounded-md bg-green-800 text-white text-center p-3 mt-8 mb-8 text-sm">Log in</button>
                     </div>
       </form>
             </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,23 +35,31 @@
         </tr>
       </thead>
       <tbody id="profileTableBody">
+      <?php 
+          include '../db.php';
+          $profile = $db->selectWithWhere('users');
+          foreach($profile as $p){
+            extract($p);
+          ?>
         <tr class="hover:bg-gray-100">
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
-          <td class="border-t py-2 px-4"></td>
+          
+          <td class="border-t py-2 px-4"><?php echo $email ?></td>
+          <td class="border-t py-2 px-4"><?php echo $username ?></td>
+          <td class="border-t py-2 px-4"><?php echo $password ?></td>
+          <td class="border-t py-2 px-4"><?php echo $first_name ?></td>
+          <td class="border-t py-2 px-4"><?php echo $middle_name ?></td>
+          <td class="border-t py-2 px-4"><?php echo $last_name ?></td>
+          <td class="border-t py-2 px-4"><?php echo $address ?></td>
+          <td class="border-t py-2 px-4"><?php echo $gender ?></td>
+          <td class="border-t py-2 px-4"><?php echo $status ?></td>
+          <td class="border-t py-2 px-4"><?php echo $birth_date ?></td>
+          <td class="border-t py-2 px-4"><?php echo $age ?></td>
           <td class="border-t py-2 px-4">
             <i class="fa-solid fa-trash cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="deleteRow(this)"></i>
             <i class="fa-solid fa-check cursor-pointer hidden" style="color: #0f5d0e; font-size: 25px;" onclick="confirmEdit(this)"></i>
           </td>
         </tr>
+        <?php } ?>
       </tbody>
     </table>
   </div>

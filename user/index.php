@@ -1,7 +1,9 @@
-
-
-
-
+<?php
+session_start();
+if(!isset($_SESSION['logged'])){
+header('location: ../');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light" >
 <head>
@@ -24,6 +26,13 @@
 
 </head>
 <body class=" bg-green-200">
+<?php
+if(isset($_SESSION['reserb'])){
+    echo $_SESSION['reserb'];
+}
+?>
+   
+    
 <div class=" navbar bg-base-100 fixed z-50" style="border-bottom: solid 20px #a7f3d0;">
  
 
@@ -66,17 +75,27 @@
                 </tr>
             </thead>
             <tbody>
+        
+                 <?php
+                  include '../db.php';
+                  if(isset($db->selectWithWhere('reservations', '*', 'user_id=' . $_SESSION['user_id'])[0])){
+                  $bayot = $db->selectWithWhere('reservations', '*', 'user_id=' . $_SESSION['user_id']);
+                  foreach($bayot as $b){
+                    extract($b);
+                  ?>
                 <tr>
-                    <td>[Last Name]</td>
-                    <td>[First Name]</td>
-                    <td>[Middle Name]</td>
-                    <td>[Date of Birth]</td>
-                    <td>[Date of Death]</td>
-                    <td>[Place of Birth]</td>
-                    <td>[Place of Death]</td>
-                    <td>[Cause of Death]</td>
-                    <td>[Burial Date]</td>
+                <td><?php echo isset($last_name) ? $last_name : ''; ?></td>
+                <td><?php echo isset($first_name) ? $first_name : ''; ?></td>
+                <td><?php echo isset($middle_name) ? $middle_name : ''; ?></td>
+                <td><?php echo isset($birth_date) ? $birth_date : ''; ?></td>
+                <td><?php echo isset($death_date) ? $death_date : ''; ?></td>
+                <td><?php echo isset($birth_place) ? $birth_place : ''; ?></td>
+                <td><?php echo isset($death_place) ? $death_place : ''; ?></td>
+                <td><?php echo isset($cause_of_death) ? $cause_of_death : ''; ?></td>
+                <td><?php echo isset($burial_date) ? $burial_date : ''; ?></td>
+
                 </tr>
+                <?php  }} ?> 
             </tbody>
         </table>
 
@@ -92,7 +111,7 @@
 
    <!-- Payment History Modal -->
 <div id="payment-history-modal" class="modal">
-    <div class="modal-box max-w-3xl bg-green-100">
+    <div class="modal-box max-w-4xl bg-green-100">
         <h3 class="font-bold text-lg text-green-800">Payment History</h3>
         <table class="table w-full mt-4">
             <thead>
@@ -106,30 +125,21 @@
                 </tr>
             </thead>
             <tbody>
+            <?php
+                  if(isset($db->selectWithWhere('reservations', '*', 'user_id=' . $_SESSION['user_id'])[0])){
+                  $lage = $db->selectWithWhere('reservations', '*', 'user_id=' . $_SESSION['user_id']);
+                  foreach($bayot as $h){
+                    extract($h);
+                  ?>
                 <tr>
-                    <td>Type of Lot 1</td>
-                    <td>[Area Size 1]</td>
-                    <td>[Amount 1]</td>
-                    <td>[Down Payment 1]</td>
-                    <td>[Monthly Amortization 1]</td>
-                    <td>[Date 1]</td>
+                    <td><?php echo isset($lot_type) ? $lot_type : ''; ?></td>
+                    <td><?php echo isset($area_size) ? $area_size : ''; ?></td>
+                    <td><?php echo isset($amount) ? $amount : ''; ?></td>
+                    <td><?php echo isset($down_payment) ? $down_payment : ''; ?></td>
+                    <td><?php echo isset($monthly_amortization) ? $monthly_amortization : ''; ?></td>
+                    <td><?php echo isset($reservation_date) ? $reservation_date : ''; ?></td>
                 </tr>
-                <tr>
-                    <td>Type of Lot 2</td>
-                    <td>[Area Size 2]</td>
-                    <td>[Amount 2]</td>
-                    <td>[Down Payment 2]</td>
-                    <td>[Monthly Amortization 2]</td>
-                    <td>[Date 2]</td>
-                </tr>
-                <tr>
-                    <td>Type of Lot 3</td>
-                    <td>[Area Size 3]</td>
-                    <td>[Amount 3]</td>
-                    <td>[Down Payment 3]</td>
-                    <td>[Monthly Amortization 3]</td>
-                    <td>[Date 3]</td>
-                </tr>
+                <?php }} ?>
                 <!-- Add more rows as needed -->
             </tbody>
         </table>
@@ -145,7 +155,7 @@
             <div class="main w-96 p-6 flex items-center flex-col bg-white m-auto my-5 border border-green-800 rounded-lg">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="closeModal('my-account-modal')">✕</button>
                 <h2 class="text-2xl font-bold mb-4 text-green-800">My Account</h2>
-                <form action="#" method="post" class="w-full">
+                <form action="update.php" method="POST" class="w-full">
                     <label class="input input-bordered flex items-center gap-2 p-2 mt-2 w-full text-sm border-green-800">
                         <input type="email" name="email" class="grow" placeholder="Email Address" required />
                     </label>
@@ -240,8 +250,8 @@
         <div class="flex flex-col items-center p-6 bg-white m-auto my-5 border border-green-800 rounded-lg">
             <h2 class="text-xl font-bold mb-4">Log out of your account</h2>
             <div class="flex gap-4 mt-4">
-            <a href="UI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
-             <a href="../index.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
+            <a href="./" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
+             <a href="../logout.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
             </div>
         </div>
     </div>
@@ -280,7 +290,7 @@
 
                 <div class="overflow-x-auto">
                     <div class="flex items-center space-x-4 p-10 w-max">
-                        <a href="dfap.php">
+                        <a href="dfap.php?lot_type=Socialized (Low Cost)&lot_area=no size&amount=₱18,000.00&down=P5,000.00&id=1">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p2.jpg" alt="Socialized Low Cost" class="w-full h-auto mb-4">
@@ -302,7 +312,7 @@
                             </button>
                         </a>
 
-                        <a href="dfap.php">
+                        <a href="dfap.php?lot_type=Socialized&lot_area=Size (Sq m): 2.44&amount=₱29,000.00&down=P5,000.00&id=2">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p3.jpg" alt="Socialized" class="w-full h-auto mb-4">
@@ -324,7 +334,7 @@
                             </button>
                         </a>
 
-                        <a href="dfap.php">
+                        <a href="dfap.php?lot_type=Lawn Lot&lot_area=Size (Sq m): 2.44&amount=₱39,000.00&down=P5,000.00&id=3">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p1.jpg" alt="Lawn Lot" class="w-full h-auto mb-4">
@@ -346,7 +356,7 @@
                             </button>
                         </a>
 
-                        <a href="dfap.php">
+                        <a href="dfap.php?lot_type=Lawn Lot&lot_area=Upgraded&amount=₱57,000.00&down=P5,000.00&id=4">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p1.jpg" alt="Upgraded" class="w-full h-auto mb-4">
@@ -368,7 +378,7 @@
                             </button>
                         </a>
 
-                        <a href="dfap.php">
+                        <a href="dfap.php?lot_type=4-Lot Garden&lot_area=Size (Sq m): 9.76&amount=₱185,000.00&down=P20,000.00&id=5">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p1.jpg" alt="4-Lot Garden" class="w-full h-auto mb-4">
@@ -434,14 +444,14 @@
             <div class="w-full md:w-1/2 h-97">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.12723617833!2d123.79807487449418!3d8.487007697238479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32551fd8667c806f%3A0x3c755bfaf75e0fd0!2sCompassion%20memorial%20gardens!5e0!3m2!1sen!2sph!4v1717043175379!5m2!1sen!2sph" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="w-full md:w-1/2 p-6">
+            <form class="w-full md:w-1/2 p-6" method="POST" action="insert.php">
                 <h2 class="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-                <input type="text" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Name">
-                <input type="text" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Email">
-                <input type="text" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Phone">
-                <textarea class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Message"></textarea>
+                <input type="text" name="coname" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Name">
+                <input type="text" name="conemail" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Email">
+                <input type="text" name="conphone" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Phone">
+                <textarea name="conmessage" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Message"></textarea>
                 <button class="w-full p-3 bg-green-700 text-white rounded-lg hover:bg-green-800">Send</button>
-            </div>
+            </form>
         </div>
     </div>
                 </div>
