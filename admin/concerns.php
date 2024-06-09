@@ -1,3 +1,9 @@
+<?php include '../db.php';
+session_start();
+if(!isset($_SESSION['auth'])){
+  header('location: ../');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>

@@ -99,6 +99,22 @@ class Database {
     private function quoteValue($value) {
         return "'" . $this->conn->real_escape_string($value) . "'";
     }
+    public function countRows($table, $where = '') {
+        $sql = "SELECT COUNT(*) as count FROM $table";
+        if ($where) {
+            $sql .= " WHERE $where";
+        }
+
+        $result = $this->conn->query($sql);
+
+        if ($result === false) {
+            die("Query failed: " . $this->conn->error);
+        }
+
+        $row = $result->fetch_assoc();
+        return $row['count'];
+    }
+
 }
 
 $db = new Database('localhost', 'root', '', 'compassionmemorialgardens');

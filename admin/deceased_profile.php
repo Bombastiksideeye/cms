@@ -1,3 +1,9 @@
+<?php include '../db.php';
+session_start();
+if(!isset($_SESSION['auth'])){
+  header('location: ../');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
@@ -38,7 +44,8 @@
       </thead>
       <tbody id="profileTableBody">
         <tr class="hover:bg-gray-100">
-          <?php include '../db.php';
+          <?php 
+
           $users = $db->selectWithWhere("reservations");
           foreach($users as $u){        
           ?>

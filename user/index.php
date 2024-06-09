@@ -524,7 +524,7 @@ if(isset($_SESSION['reserb'])){
             </div>
             <form class="w-full md:w-1/2 p-6" method="POST" action="insert.php">
                 <h2 class="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-                <input type="text" name="coname" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Name">
+                <input dia type="text" name="coname" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Name">
                 <input type="text" name="conemail" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Email">
                 <input type="text" name="conphone" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Phone">
                 <textarea name="conmessage" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Message"></textarea>

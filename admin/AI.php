@@ -1,3 +1,9 @@
+<?php include '../db.php';
+session_start();
+if(!isset($_SESSION['auth'])){
+  header('location: ../');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
@@ -57,7 +63,7 @@
         </li>
       </ul>
     </div>
-    <button id="open-modal" class="rounded-md bg-green-800 text-white w-40 p-3 text-sm flex justify-center items-center ml-12 mt-10">Walk-In Lot Purchase</button>
+    <a href="./dfap.php" class="rounded-md bg-green-800 text-white w-40 p-3 text-sm flex justify-center items-center ml-12 mt-10">Walk-In Lot Purchase</a>
 
   </aside>
   <main class="relative ml-64 p-6">
@@ -216,7 +222,7 @@
           <h2 class="text-xl font-bold mb-4">Log out of your account</h2>
           <div class="flex gap-4 mt-4">
             <a href="AI.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>
-            <a href="../index.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
+            <a href="../logout.php" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Log out</a>
           </div>
         </div>
       </div>
@@ -241,36 +247,40 @@
     </style>
 
 
-
+      <?php
+      $Deceased = $db->countRows('reservations');
+      $User = $db->countRows('users');
+      $Concerns = $db->countRows('contactmessages');
+       ?>
     <!-- End Navbar -->
     <div class="grid grid-cols-1 md:grid-cols-5 gap-4 pt-5">
       <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
         <i class="fas fa-user-slash text-3xl mb-2"></i>
-        <div class="text-3xl font-bold text-blue-500">2194</div>
+        <div class="text-3xl font-bold text-blue-500"><?php echo $Deceased?></div>
         <h2 class="font-bold text-xl mb-2">Deceased Profiles</h2>
         <p class="text-gray-400">Explore profiles of deceased individuals.</p>
       </div>
       <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
         <i class="fas fa-users text-3xl mb-2"></i>
-        <div class="text-3xl font-bold text-blue-500">223</div>
+        <div class="text-3xl font-bold text-blue-500"><?php echo $User?></div>
         <h2 class="font-bold text-xl mb-2">User Profiles</h2>
         <p class="text-gray-400">View and manage user profiles.</p>
       </div>
       <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
         <i class="fas fa-exclamation-circle text-3xl mb-2"></i>
-        <div class="text-3xl font-bold text-blue-500">234</div>
+        <div class="text-3xl font-bold text-blue-500"><?php echo $Concerns?></div>
         <h2 class="font-bold text-xl mb-2">Concerns</h2>
         <p class="text-gray-400">Handle concerns and issues.</p>
       </div>
       <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
         <i class="fas fa-calendar-alt text-3xl mb-2"></i>
-        <div class="text-3xl font-bold text-blue-500">194</div>
+        <div class="text-3xl font-bold text-blue-500"><?php echo $Deceased?></div>
         <h2 class="font-bold text-xl mb-2">Reservations</h2>
         <p class="text-gray-400">Manage reservations for events or services.</p>
       </div>
       <div class="bg-white text-black rounded-xl shadow p-4 text-center transform hover:scale-105 transition-transform hover:bg-gray-100">
         <i class="fas fa-dollar-sign text-3xl mb-2"></i>
-        <div class="text-3xl font-bold text-blue-500">234</div>
+        <div class="text-3xl font-bold text-blue-500"><?php echo $Deceased?></div>
         <h2 class="font-bold text-xl mb-2">Payments</h2>
         <p class="text-gray-400">Track and process payments.</p>
       </div>
@@ -300,10 +310,10 @@
             </tr>
           </thead>
           <tbody>
-            <?php include '../db.php';
+            <?php 
             $u = $db->selectWithWhere("reservations")[0];
             $profile = $db->selectWithWhere("users")[0];
-            $concern = $db->selectWithWhere("contactmessages")[0];
+            
             $reservations = $db->selectWithWhere("reservations")[0];
             ?>
             <tr class="hover:bg-gray-100">
@@ -387,13 +397,19 @@
             </tr>
           </thead>
           <tbody>
+           
+            <?php
+            if(!empty($db->selectWithWhere("contactmessages")[0])){
+            $concern = $db->selectWithWhere("contactmessages")[0];
+            ?>
             <tr class="hover:bg-gray-100">
-              <td class="border-t py-2 px-4"><?php echo $concern['name']?></td>
-              <td class="border-t py-2 px-4"><?php echo $concern['email']?></td>
-              <td class="border-t py-2 px-4"><?php echo $concern['phone']?></td>
-              <td class="border-t py-2 px-4"><?php echo $concern['message']?></td>
-              <td class="border-t py-2 px-4"><?php echo $concern['sent_date']?></td>
+              <td class="border-t py-2 px-4"><?php echo $concern['name'] ? : ''?></td>
+              <td class="border-t py-2 px-4"><?php echo $concern['email'] ? : ''?></td>
+              <td class="border-t py-2 px-4"><?php echo $concern['phone'] ? : '' ?></td>
+              <td class="border-t py-2 px-4"><?php echo $concern['message'] ? : '' ?></td>
+              <td class="border-t py-2 px-4"><?php echo $concern['sent_date'] ? : '' ?></td>
             </tr>
+            <?php } ?>
             <!-- More rows as needed -->
           </tbody>
         </table>

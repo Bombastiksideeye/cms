@@ -13,8 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $burialDate = $_POST['burialDate'];
     $burialPlace = $_POST['burialPlace'];
 
-    // Create a new database connection
-    $db = new DatabaseConnection();
 
     // Insert the new record
     $db->insert('reservations', 

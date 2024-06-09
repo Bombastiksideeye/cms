@@ -1,3 +1,9 @@
+<?php include '../db.php';
+session_start();
+if(!isset($_SESSION['auth'])){
+  header('location: ../');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -30,13 +36,12 @@
           <th class="w-1/9 py-2 px-4 bg-gray-200 text-left">Monthly Amortization (0% Interest)</th>
           <th class="w-1/9 py-2 px-4 bg-gray-200 text-left">Date Paid</th>
           <th class="w-1/9 py-2 px-4 bg-gray-200 text-left">Status</th>
-          <th class="w-1/9 py-2 px-4 bg-gray-200 text-left">Actions</th>
+          <th class="w-1/9 py-2 px-4 bg-gray-200 text-left">only profile can perform this Actions</th>
         </tr>
       </thead>
       <tbody id="paymentTableBody">
         <tr class="hover:bg-gray-100">
         <?php 
-          include '../db.php';
           $reservations = $db->selectWithWhere('reservations');
           foreach($reservations as $p){
             extract($p);

@@ -177,11 +177,11 @@ session_destroy();
             </div>
             <div class="w-full md:w-1/2 p-6">
                 <h2 class="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-                <input type="text" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Name">
-                <input type="text" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Email">
-                <input type="number" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Enter Your Phone">
-                <textarea class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Message"></textarea>
-                <button class="w-full p-3 bg-green-700 text-white rounded-lg hover:bg-green-800">Send</button>
+                <input disabled type="text" name="coname" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Login First to Send">
+                <input disabled type="text" name="conemail" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Login First to Send">
+                <input disabled type="text" name="conphone" class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Login First to Send">
+                <textarea name="conmessage" disabled class="w-full p-3 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-800" placeholder="Login First to Send"></textarea>
+                <button disabled class="w-full p-3 bg-green-700 text-white rounded-lg hover:bg-green-800">Send</button>
             </div>
         </div>
     </div>
