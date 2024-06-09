@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Payment</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center">Stripe Payment</h2>
+        <form id="payment-form" class="space-y-4">
+            <div class="form-row">
+                <label for="card-element" class="block text-sm font-medium text-gray-700 mb-2">Credit or debit card</label>
+                <div id="card-element" class="p-3 border border-gray-300 rounded-md"></div>
+                <div id="card-errors" role="alert" class="text-red-500 mt-2 text-sm"></div>
+            </div>
+            <button id="submit-button" class="w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700">Pay</button>
+        </form>
+    </div>
+
+    <script>
+        var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+        var elements = stripe.elements();
+
+        var style = {
+            base: {
+                color: '#32325d',
+                fontFamily: 'Arial, sans-serif',
+                fontSmoothing: 'antialiased',
+                fontSize: '16px',
+                '::placeholder': {
+                    color: '#aab7c4'
+                }
+            },
+            invalid: {
+                color: '#fa755a',
+                iconColor: '#fa755a'
+            }
+        };
+
+        var card = elements.create('card', { style: style });
+        card.mount('#card-element');
+
+        card.on('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+
+        function stripeTokenHandler(token) {
+            console.log('Token ID:', token.id);
+            alert('Payment successful! Token: ' + token.id);f
+            window.location.href = 'UI.php';
+        }
+    </script>
+</body>
+</html>
