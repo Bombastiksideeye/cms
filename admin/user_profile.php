@@ -56,7 +56,8 @@
           <td class="border-t py-2 px-4"><?php echo $age ?></td>
           <td class="border-t py-2 px-4">
             <i class="fa-solid fa-trash cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="deleteRow(this)"></i>
-            <i class="fa-solid fa-check cursor-pointer hidden" style="color: #0f5d0e; font-size: 25px;" onclick="confirmEdit(this)"></i>
+            <a class="fa-solid fa-check cursor-pointer hidden" style="color: #0f5d0e; font-size: 25px;" onclick="confirmEdit(this)" href="delete.php?id=<?php echo $user_id .'&' . 'username='. 
+            $username ?>"></a>
           </td>
         </tr>
         <?php } ?>

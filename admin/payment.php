@@ -44,11 +44,11 @@
           <td class="border-t py-2 px-4"><?php echo "$first_name $middle_name $last_name" ?> </td>
           <td class="border-t py-2 px-4"><?php echo "$first_name $middle_name $last_name" ?></td>
           <td class="border-t py-2 px-4"><?php echo $lot_type ?></td>
-          <td class="border-t py-2 px-4"><?php echo $amount ?></td>
+          <td class="border-t py-2 px-4"><?php echo $amount ? : 'N/A' ?></td>
           <td class="border-t py-2 px-4"><?php echo $reservation_date ?></td>
           <td class="border-t py-2 px-4"><?php echo $area_size ?></td>
-          <td class="border-t py-2 px-4"><?php echo $down_payment ?></td>
-          <td class="border-t py-2 px-4"><?php echo $monthly_amortization ?></td>
+          <td class="border-t py-2 px-4"><?php echo $down_payment ? : 'N/A' ?></td>
+          <td class="border-t py-2 px-4"><?php echo $monthly_amortization ? : 'N/A' ?></td>
           <td class="border-t py-2 px-4"><?php echo $reservation_date ?></td>
           <td class="border-t py-2 px-4"><?php echo $lot_type ?></td>
           <td class="border-t py-2 px-4">

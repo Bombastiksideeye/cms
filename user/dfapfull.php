@@ -72,72 +72,12 @@ header('location: ../');
                 <input type="text" id="area_size_1" value="<?php echo $_GET['lot_area'] ?>" name="area_size_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800  ">
             </label>
             
-<!--             
-       
-
             <label class="block col-span-2">
                 <span class="text-gray-700">Amount:</span>
-                <input type="text" id="amount_1" name="amount_1" value="" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" >
+                <input type="text" id="amount_1" name="amount_1" value="<?php echo $_GET['amount'] ?>" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800" >
             </label>
-             -->
+            
 
-
-            <label class="block col-span-2">
-                <span class="text-gray-700">Down Payment:</span>
-                <input type="text" id="down_payment_1" value="<?php echo $_GET['down'] ?>" name="down_payment_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
-            </label>
-
-            <label class="block col-span-2">
-                <span class="text-gray-700">Monthly Amortization 0% Interest:</span>
-            <select id="monthly_amortization_1" name="monthly_amortization_1" class="mt-1 block w-full rounded-md gap-2 p-2 mt-2 w-full text-sm border border-green-800">
-               <?php 
-               $id  = $_GET['id'];
-               if($id === '1'){
-                echo '<option value="P4,333.33 (3 months)">P4,333.33 (3 months)</option>';
-                echo '<option value="P2,166.66 (6 months)">P2,166.66 (6 months)</option>';
-                echo '<option value="P1,083.33 (12 months)">P1,083.33 (12 months)</option>';
-               }
-               else if($id === '2'){
-                echo '<option value="P8,000.00 (3 months)">P8,000.00 (3 months)</option>';
-                echo '<option value="P4,000.00 (6 months)">P4,000.00 (6 months)</option>';
-                echo '<option value="P2,000.00 (12 months)">P2,000.00 (12 months)</option>';
-                echo '<option value="P1,333.33 (18 months)">P1,333.33 (18 months)</option>';
-                echo '<option value="P1,000.00 (24 months)">P1,000.00 (24 months)</option>';
-               }
-               else if($id === '3'){
-                echo '<option value="P5,666.66 (3 months)">P5,666.66 (3 months)</option>';
-                echo '<option value="P2,833.33 (6 months)">P2,833.33 (6 months)</option>';
-                echo '<option value="P1,888.88 (12 months)">P1,888.88 (12 months)</option>';
-                echo '<option value="P1,416.66 (18 months)">P1,416.66 (18 months)</option>';
-                echo '<option value="P1,000.00 (24 months)">P1,000.00 (24 months)</option>';
-
-
-               }
-               else if($id === '4'){
-                echo '<option value="P17,333 (3 months)">P17,333 (3 months)</option>';
-                echo '<option value="P8,666.66 (6 months)">P8,666.66 (6 months)</option>';
-                echo '<option value="P4,333 (12 months)">P4,333 (12 months)</option>';
-                echo '<option value="P2,889 (18 months)">P2,889 (18 months)</option>';
-                echo '<option value="P2,167 (24 months)">P2,167 (24 months)</option>';
-
-
-               }
-               else if($id === '5'){
-                echo '<option value="P55,000.00 (3 months)">P55,000.00 (3 months)</option>';
-                echo '<option value="P27,500.00 (6 months)">P27,500.00 (6 months)</option>';
-                echo '<option value="P13,750.00 (12 months)">P13,750.00 (12 months)</option>';
-                echo '<option value="P13,750.00 (18 months)">P13,750.00 (18 months)</option>';
-                echo '<option value="P6,875.00 (24 months)">P6,875.00 (24 months)</option>';
-
-
-               }
-
-
-               
-               ?>
-                
-            </select>
-               
         </div>
         <div class="flex justify-center gap-10 mt-10">
             <a href="./" class="rounded-md bg-green-800 text-white w-24 p-3 text-sm flex justify-center items-center">Cancel</a>

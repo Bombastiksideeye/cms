@@ -54,7 +54,8 @@
           <td class="border-t py-2 px-4">
             <i class="fa-solid fa-pen-to-square cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="editRow(this)"></i>
             <i class="fa-solid fa-trash cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="deleteRow(this)"></i>
-            <i class="fa-solid fa-check cursor-pointer hidden" style="color: #0f5d0e; font-size: 25px;" onclick="confirmEdit(this)"></i>
+            <a class="fa-solid fa-check cursor-pointer hidden" style="color: #0f5d0e; font-size: 25px;" id="confirm" value="<?php echo $u['user_id'] ?>"onclick="confirmEdit(this)" href="delete.php?id= <?php echo $u['user_id']?>&burial_date=<?php echo $u['burial_date']?>  "></a>
+
           </td>
         </tr>
         <?php } ?>
@@ -66,6 +67,7 @@
 
 
 <script>
+  let editID = document.getElementById('confirm').value;
   function editRow(icon) {
   const row = icon.parentElement.parentElement;
   const cells = row.querySelectorAll('td');
@@ -85,13 +87,15 @@ function deleteRow(icon) {
   };
 }
 
-function confirmEdit(icon) {
+function confirmEdit(icon , editID) {
   const row = icon.parentElement.parentElement;
   const inputs = row.querySelectorAll('input, textarea');
   inputs.forEach((input, index) => {
     row.children[index].innerText = input.value;
+    window.location.href = "delete.php?id="+ editID ;
   });
   icon.classList.add('hidden');
+
 }
 </script>
 

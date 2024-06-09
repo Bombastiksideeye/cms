@@ -132,12 +132,12 @@ if(isset($_SESSION['reserb'])){
                     extract($h);
                   ?>
                 <tr>
-                    <td><?php echo isset($lot_type) ? $lot_type : ''; ?></td>
-                    <td><?php echo isset($area_size) ? $area_size : ''; ?></td>
-                    <td><?php echo isset($amount) ? $amount : ''; ?></td>
-                    <td><?php echo isset($down_payment) ? $down_payment : ''; ?></td>
-                    <td><?php echo isset($monthly_amortization) ? $monthly_amortization : ''; ?></td>
-                    <td><?php echo isset($reservation_date) ? $reservation_date : ''; ?></td>
+                    <td><?php echo isset($lot_type) ? $lot_type : 'N/A'; ?></td>
+                    <td><?php echo isset($area_size) ? $area_size : 'N/A'; ?></td>
+                    <td><?php echo isset($amount) ? $amount : 'N/A'; ?></td>
+                    <td><?php echo isset($down_payment) ? $down_payment : 'N/A'; ?></td>
+                    <td><?php echo isset($monthly_amortization) ? $monthly_amortization : 'N/A'; ?></td>
+                    <td><?php echo isset($reservation_date) ? $reservation_date : 'N/A'; ?></td>
                 </tr>
                 <?php }} ?>
                 <!-- Add more rows as needed -->
@@ -290,7 +290,7 @@ if(isset($_SESSION['reserb'])){
 
                 <div class="overflow-x-auto">
                     <div class="flex items-center space-x-4 p-10 w-max">
-                        <a href="dfap.php?lot_type=Socialized (Low Cost)&lot_area=no size&amount=₱18,000.00&down=P5,000.00&id=1">
+                    <a onclick="payment_modal1.showModal()"> 
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p2.jpg" alt="Socialized Low Cost" class="w-full h-auto mb-4">
@@ -311,8 +311,7 @@ if(isset($_SESSION['reserb'])){
                                 </div>
                             </button>
                         </a>
-
-                        <a href="dfap.php?lot_type=Socialized&lot_area=Size (Sq m): 2.44&amount=₱29,000.00&down=P5,000.00&id=2">
+                        <a onclick="payment_modal2.showModal()">
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p3.jpg" alt="Socialized" class="w-full h-auto mb-4">
@@ -333,8 +332,8 @@ if(isset($_SESSION['reserb'])){
                                 </div>
                             </button>
                         </a>
-
-                        <a href="dfap.php?lot_type=Lawn Lot&lot_area=Size (Sq m): 2.44&amount=₱39,000.00&down=P5,000.00&id=3">
+                        <a onclick="payment_modal3.showModal()">
+                        
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p1.jpg" alt="Lawn Lot" class="w-full h-auto mb-4">
@@ -355,8 +354,8 @@ if(isset($_SESSION['reserb'])){
                                 </div>
                             </button>
                         </a>
-
-                        <a href="dfap.php?lot_type=Lawn Lot&lot_area=Upgraded&amount=₱57,000.00&down=P5,000.00&id=4">
+                        <a onclick="payment_modal4.showModal()">
+                        
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p1.jpg" alt="Upgraded" class="w-full h-auto mb-4">
@@ -377,8 +376,8 @@ if(isset($_SESSION['reserb'])){
                                 </div>
                             </button>
                         </a>
-
-                        <a href="dfap.php?lot_type=4-Lot Garden&lot_area=Size (Sq m): 9.76&amount=₱185,000.00&down=P20,000.00&id=5">
+                        <a onclick="payment_modal5.showModal()">
+                        
                             <button class="container bg-white p-6 rounded-lg shadow-lg w-64">
                                 <div class="item">
                                     <img src="../images/p1.jpg" alt="4-Lot Garden" class="w-full h-auto mb-4">
@@ -406,6 +405,85 @@ if(isset($_SESSION['reserb'])){
         </dialog>
     </div>
 </div>
+
+
+<dialog id="payment_modal1" class="modal">
+  <div class="modal-box">
+    <div class="justify-center item-center flex mt-10 gap-4">
+    <a href="dfapfull.php?lot_type=Socialized (Low Cost)&lot_area=no size&amount=₱18,000.00&down=P5,000.00&id=1" class="btn btn-success">Full Payment</a>
+    <a href="dfap.php?lot_type=Socialized (Low Cost)&lot_area=no size&amount=₱18,000.00&down=P5,000.00&id=1" class="btn btn-outline-success">Monthly</a>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+<dialog id="payment_modal2" class="modal">
+  <div class="modal-box">
+    <div class="justify-center item-center flex mt-10 gap-4">
+    <a href="dfapfull.php?lot_type=Socialized&lot_area=Size (Sq m): 2.44&amount=₱29,000.00&down=P5,000.00&id=2" class="btn btn-success">Full Payment</a>
+    <a href="dfap.php?lot_type=Socialized&lot_area=Size (Sq m): 2.44&amount=₱29,000.00&down=P5,000.00&id=2" class="btn btn-outline-success">Monthly</a>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
+<dialog id="payment_modal3" class="modal">
+  <div class="modal-box">
+    <div class="justify-center item-center flex mt-10 gap-4">
+    <a href="dfapfull.php?lot_type=Lawn Lot&lot_area=Size (Sq m): 2.44&amount=₱39,000.00&down=P5,000.00&id=3" class="btn btn-success">Full Payment</a>
+    <a href="dfap.php?lot_type=Lawn Lot&lot_area=Size (Sq m): 2.44&amount=₱39,000.00&down=P5,000.00&id=3" class="btn btn-outline-success">Monthly</a>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
+<dialog id="payment_modal4" class="modal">
+  <div class="modal-box">
+    <div class="justify-center item-center flex mt-10 gap-4">
+    <a href="dfapfull.php?lot_type=Lawn Lot&lot_area=Upgraded&amount=₱57,000.00&down=P5,000.00&id=4" class="btn btn-success">Full Payment</a>
+    <a href="dfap.php?lot_type=Lawn Lot&lot_area=Upgraded&amount=₱57,000.00&down=P5,000.00&id=4" class="btn btn-outline-success">Monthly</a>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="payment_modal5" class="modal">
+  <div class="modal-box">
+    <div class="justify-center item-center flex mt-10 gap-4">
+    <a href="dfapfull.php?lot_type=4-Lot Garden&lot_area=Size (Sq m): 9.76&amount=₱185,000.00&down=P20,000.00&id=5" class="btn btn-success">Full Payment</a>
+    <a href="dfap.php?lot_type=4-Lot Garden&lot_area=Size (Sq m): 9.76&amount=₱185,000.00&down=P20,000.00&id=5" class="btn btn-outline-success">Monthly</a>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
 
 
 

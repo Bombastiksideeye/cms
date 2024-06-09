@@ -44,7 +44,7 @@
               <td class="border-t py-2 px-4"><?php echo $users['username'] ?></td>
               <td class="border-t py-2 px-4"><?php echo "$first_name $middle_name $last_name" ?></td>
               <td class="border-t py-2 px-4"><?php echo $lot_type ?></td>
-              <td class="border-t py-2 px-4"><?php echo $amount ?></td>
+              <td class="border-t py-2 px-4"><?php echo $amount ? $amount : 'Monthly' ?></td>
               <td class="border-t py-2 px-4"><?php echo $reservation_date ?></td>
               <td class="border-t py-2 px-4">
                 <i class="fa-solid fa-xmark cursor-pointer" style="color: #0f5d0e; font-size: 25px;" onclick="showDeleteConfirmationModal()"></i>
